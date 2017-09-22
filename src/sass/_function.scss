@@ -1,0 +1,19 @@
+@function text-color($list){
+   $text-list:();
+   @each $color, $percentage in $list {   
+    @if lightness($color) > 50% {
+     $text-list:append($text-list, $black $percentage, comma);    
+    } @else {
+        $text-list:append($text-list, $white $percentage, comma);
+     }        
+	}
+  @return $text-list;
+} 
+
+@function text-color2($list){
+   $text-list:();
+   @each $color in $list { 
+     $text-list:append($text-list, invert($color), comma);    
+	}
+  @return $text-list;
+} 
