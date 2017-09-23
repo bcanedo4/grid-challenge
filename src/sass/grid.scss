@@ -1,0 +1,227 @@
+@import "variables";
+@import "mixins";
+@import "lists";
+@import "variables";
+
+
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    @include border-box;
+    }
+
+p, a, body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto !important; 
+    }
+
+.darker {
+  filter: brightness(50%);
+}
+ 
+.background--color {
+    background-color: #1d4780;
+}
+
+.forgotPassword {
+  color: red;
+  text-align: right;
+}
+
+/* REESE'S PIECES color gradient */
+
+$lista: ($purple),
+        ($orange),
+        ($yellow);
+
+$listb: ($orange 0%),
+        ($orange 50%),
+        ($white 50%),
+        ($white 100%);
+
+.text-gradient {
+  width: 100%;
+  font-size: 17px;
+  font-weight: bold;
+  color: $orange;
+  background: -webkit-linear-gradient(left, $orange, $yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.inline {
+  display: inline;
+}
+
+.color-gradient {
+ @include gradient(left, $lista);
+    .text {
+      @include gradient(left, text-color2($lista));
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+      }
+}
+
+.login__background--color {
+	background-color: white;
+}
+
+.picture--text {
+	position: absolute;
+	color: white;
+    z-index: 2;
+	margin-left: 60px;
+	margin-top: 60px;
+}
+
+.loginPage--text {
+	color: #d00d20;
+}
+
+.signinPage--text {
+	color: black;
+    text-align: right;
+}
+
+.line--color{
+	color: gray;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d00d20;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded slider */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.left--padding {
+	padding-left: 1em;
+}
+
+.right--padding {
+  padding-right: 1em;
+}
+
+.bottom--padding {
+  padding-bottom: 1em;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    float: left;
+    }
+ 
+.wrapper, .row {
+    @extend %clearfix;
+    }
+
+.darthSizing {
+	max-width: 100%;
+	height: auto;
+
+}
+
+.button--style {
+    background-color: #d00d20;
+    border: none;
+    color: white;
+    padding: 15px 72px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px;
+}
+      
+[class*='column-'] {
+    float: left;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 100%;
+    min-height: 1px; 
+    }
+
+/* Text Field */
+
+.text-line {
+  background-color: transparent;
+  color: #060707;
+  outline: none;
+  outline-style: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #eeeeee 1px;
+  padding: 30px 140px;
+}
+
+ 
+@media #{$breakpoint-medium} {
+    .wrapper {      
+        width: 95%;
+        max-width: $grid-max-width;     
+        }
+    @for $i from 1 through $grid-columns {      
+        .column-#{$i} {         
+            width: 100% / $grid-columns * $i;   
+            }           
+       }
+    }
