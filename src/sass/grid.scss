@@ -18,7 +18,11 @@ img {
     width: auto;
     max-width: 100%;
     height: auto !important; 
-    }   
+    }
+
+.darker {
+  filter: brightness(50%);
+}
  
 .background--color {
     background-color: #1d4780;
@@ -70,6 +74,7 @@ $listb: ($orange 0%),
 .picture--text {
 	position: absolute;
 	color: white;
+    z-index: 2;
 	margin-left: 60px;
 	margin-top: 60px;
 }

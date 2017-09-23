@@ -21,6 +21,9 @@ img {
   max-width: 100%;
   height: auto !important; }
 
+.darker {
+  filter: brightness(50%); }
+
 .background--color {
   background-color: #1d4780; }
 
@@ -33,8 +36,8 @@ img {
   width: 100%;
   font-size: 17px;
   font-weight: bold;
-  color: #ffa600;
-  background: -webkit-linear-gradient(left, #ffa600, #ffec1a);
+  color: #ff0d12;
+  background: -webkit-linear-gradient(left, #ff0d12, #ffec1a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
@@ -42,11 +45,11 @@ img {
   display: inline; }
 
 .color-gradient {
-  background: #ffa600;
-  background: -webkit-linear-gradient(left, #23034d, #ffa600, #ffec1a); }
+  background: #ff0d12;
+  background: -webkit-linear-gradient(left, #23034d, #ff0d12, #ffec1a); }
   .color-gradient .text {
-    background: #ffa600;
-    background: -webkit-linear-gradient(left, text-color2(#23034d, #ffa600, #ffec1a));
+    background: #ff0d12;
+    background: -webkit-linear-gradient(left, text-color2(#23034d, #ff0d12, #ffec1a));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
 
@@ -56,6 +59,7 @@ img {
 .picture--text {
   position: absolute;
   color: white;
+  z-index: 2;
   margin-left: 60px;
   margin-top: 60px; }
 
